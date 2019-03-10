@@ -13,6 +13,9 @@
     },
     "frontend-e2e": {
       "tags": []
+    },
+    "landing-feature": {
+      "tags": []
     }
   }
 }

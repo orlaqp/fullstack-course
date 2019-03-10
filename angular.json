@@ -139,6 +139,37 @@
           }
         }
       }
+    },
+    "landing-feature": {
+      "root": "libs/landing/feature",
+      "sourceRoot": "libs/landing/feature/src",
+      "projectType": "library",
+      "prefix": "course",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/landing/feature/tsconfig.lib.json",
+              "libs/landing/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/landing/feature/jest.config.js",
+            "tsConfig": "libs/landing/feature/tsconfig.spec.json",
+            "setupFile": "libs/landing/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
